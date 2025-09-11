@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختيار التخصص</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body oncontextmenu="return false;">
+    <div class="container">
+        <header>
+            <h1>اختر التخصص</h1>
+            <button onclick="goBack()" class="btn-back">← رجوع</button>
+        </header>
+        
+        <main>
+            <div class="departments-list">
+                <div class="department-card" onclick="selectDepartment(1)">
+                    <h2>التقانات الطبية</h2>
+                    <p>قسم التقانات الطبية والمختبرات</p>
+                </div>
+                
+                <div class="department-card" onclick="selectDepartment(2)">
+                    <h2>التمريض</h2>
+                    <p>قسم التمريض والرعاية الصحية</p>
+                </div>
+                
+                <div class="department-card" onclick="selectDepartment(3)">
+                    <h2>الأطراف الصناعية</h2>
+                    <p>قسم الأطراف الصناعية والأجهزة التقويمية</p>
+                </div>
+                
+                <div class="department-card" onclick="selectDepartment(4)">
+                    <h2>الإدارة الصحية</h2>
+                    <p>قسم الإدارة الصحية والمعلوماتية</p>
+                </div>
+                
+                <div class="department-card" onclick="selectDepartment(5)">
+                    <h2>الصيدلة</h2>
+                    <p>قسم الصيدلة والتكنولوجيا الصيدلانية</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
