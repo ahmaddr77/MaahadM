@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - إدارة الأسئلة</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>إدارة الأسئلة الاختيارية</h1>
+        
+        <div class="form-section">
+            <h2>إضافة سؤال جديد</h2>
+            <form id="questionForm">
+                <div class="input-group">
+                    <label for="questionText">نص السؤال:</label>
+                    <textarea id="questionText" required></textarea>
+                </div>
+                
+                <div id="choicesContainer">
+                    <div class="choice-input">
+                        <input type="text" placeholder="نص الاختيار" class="choice-text">
+                        <label class="correct-label">
+                            <input type="radio" name="correctChoice" value="0" class="correct-radio"> إجابة صحيحة
+                        </label>
+                        <button type="button" class="remove-choice">×</button>
+                    </div>
+                </div>
+                
+                <button type="button" id="addChoiceBtn">+ إضافة اختيار</button>
+                <button type="submit">حفظ السؤال</button>
+            </form>
+        </div>
+
+        <div class="questions-list">
+            <h2>الأسئلة المخزنة</h2>
+            <button id="clearAllBtn" style="background: #e74c3c;">مسح جميع الأسئلة</button>
+            <div id="questionsList"></div>
+        </div>
+    </div>
+
+    <script src="firebase-config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
