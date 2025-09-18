@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>تعلّم الألمانية - اختبار PWA</title>
+
+  <!-- ربط ملف manifest -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1a73e8">
+
+  <!-- دعم iOS بسيط -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="تعلّم الألمانية">
+
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 40px; background: #f5f5f5; }
+    h1 { color: #1a73e8; }
+    button { padding: 10px 20px; font-size: 18px; border: none; border-radius: 8px; background: #1a73e8; color: white; cursor: pointer; }
+    button:hover { background: #155ab6; }
+    #lessons { margin-top: 20px; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto; }
+  </style>
+</head>
+<body>
+  <h1>مرحبًا — تطبيق تعلّم الألمانية (تجريبي)</h1>
+  <p>هذا تطبيق PWA بسيط جاهز للتحويل إلى APK. (بدون حماية شاشة)</p>
+
+  <button onclick="alert('مرحبًا! هذه مجرد تجربة.')">جرب الزر</button>
+
+  <div id="lessons">
+    <h3>مثال: جلب بيانات من قاعدة (اختياري)</h3>
+    <p id="data">جاري التحميل...</p>
+  </div>
+
+  <!-- Supabase SDK: أزل أو عِدّل إذا لا تريد الاتصال -->
+  <script src="https://unpkg.com/@supabase/supabase-js"></script>
+
+  <script>
+    // مثال جلب بيانات اختياري - ضع رابط Supabase الخاص بك هنا إذا تريد
+    // const SUPABASE_URL = "https://YOUR_PROJECT.supabase.co";
+    // const SUPABASE_KEY = "YOUR_ANON_KEY";
+    // const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+    // async function loadSample() {
+    //   document.getElementById('data').innerText = 'لا يوجد اتصال Supabase مكوّن.';
+    // }
+    // loadSample();
+
+    // تسجيل Service Worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').then(() => {
+        console.log('✅ Service Worker مسجل');
+      }).catch(err => console.warn('SW register failed:', err));
+    }
+  </script>
+</body>
+</html>
